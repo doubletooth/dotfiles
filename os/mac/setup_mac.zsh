@@ -96,7 +96,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 print_green "Installing zshrc additions"
 add_to_file ~/.zshrc "$(curl -sSL https://raw.githubusercontent.com/doubletooth/dotfiles/main/tools/zsh/zshrc)" "path updates"
-add_to_file /etc/paths.d/900-akshay "/opt/homebrew/bin" "brew path update"
+add_to_file /etc/paths.d/900-akshay "/opt/homebrew/bin" "brew path update" "y"
 
 print_green "Installing secrets manager"
 brew install --cask 1password
@@ -163,9 +163,10 @@ print_green "Installing golang tools"
 brew install go@1.17
 brew install go
 
-print_green "Installing jq and yq"
-brew install jq yq
-brew upgrade jq yq
+print_green "Installing jq and yq + other dev tools"
+brew install curl jq yq
+brew upgrade curl jq yq
+add_to_file /etc/paths.d/900-akshay "/opt/homebrew/opt/curl/bin" "brew curl install" "y"
 
 # Other language environments to setup
 # nvm/node
