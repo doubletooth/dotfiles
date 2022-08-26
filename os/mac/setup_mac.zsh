@@ -51,7 +51,13 @@ then
     print_red "Invalid sudo password provided, failing setup script"
     exit 1
 fi
-xcode-select --install
+
+if xcode-select -p; then
+  print_green "XCode tools already installed, skipping install"
+else
+  xcode-select --install
+fi
+
 sudo touch /etc/paths.d/900-akshay
 
 if [[ $(sysctl -a machdep.cpu.brand_string | awk '{ print $2 }') = "Apple" ]]; then
@@ -85,8 +91,12 @@ if [[ "${SYSTEM_VERSION}" = "ARM" ]]; then
   fi
 fi
 
-print_green "Installing package manager"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! command -v brew ; then
+  print_green "Installing package manager"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  print_green "Brew already installed, skipping"
+fi
 
 print_green "Installing shell"
 brew install --cask iterm2
@@ -163,6 +173,10 @@ print_green "Installing golang tools"
 brew install go@1.17
 brew install go
 
+print_green "Installing rustup"
+brew install rustup-init
+echo "1" | "${HOMEBREW_PREFIX}/bin/rustup-init"
+
 print_green "Installing jq and yq + other dev tools"
 brew install curl jq yq
 brew upgrade curl jq yq
@@ -171,7 +185,6 @@ add_to_file /etc/paths.d/900-akshay "/opt/homebrew/opt/curl/bin" "brew curl inst
 # Other language environments to setup
 # nvm/node
 # TeX
-# Rust
 
 # shellcheck disable=SC2016
 print_green 'Installed what we could, please restart your shell (exec $SHELL)'
