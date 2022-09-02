@@ -129,7 +129,7 @@ print_green "Installing VPN"
 brew install --cask private-internet-access
 
 print_green "Installing virtualization tools"
-brew install docker
+brew install docker --cask
 brew install minikube
 
 print_green "Installing editors"
