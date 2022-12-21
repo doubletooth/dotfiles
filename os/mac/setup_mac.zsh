@@ -143,7 +143,7 @@ brew install --cask whatsapp
 brew install --cask slack
 
 print_green "Installing python tooling"
-PYTHON_VERSION="3.10.4"
+PYTHON_VERSION="3.11.1"
 PYTHON2_VERSION="2.7.18"
 
 # shellcheck disable=SC2016

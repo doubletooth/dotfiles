@@ -20,9 +20,8 @@ chmod +x setup_mac.zsh && ./setup_mac.zsh && rm -f setup_mac.zsh
 
 ## Current Tool Support
 
-- None
+- vim
 
 ## Upcoming Tool Support
 
-- vim
 - editorconfig
