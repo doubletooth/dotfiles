@@ -142,6 +142,9 @@ print_green "Installing communication tools"
 brew install --cask whatsapp
 brew install --cask slack
 
+print_green "Installing entertainment tools"
+brew install --cask spotify
+
 print_green "Installing python tooling"
 PYTHON_VERSION="3.11.1"
 PYTHON2_VERSION="2.7.18"
