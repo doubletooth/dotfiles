@@ -1,3 +1,5 @@
 if [ -x /usr/libexec/path_helper ]; then
     eval $(/usr/libexec/path_helper -s)
 fi
+
+alias akdcm="git branch --merged | grep -v \"*\" | grep akd | xargs git branch -d"

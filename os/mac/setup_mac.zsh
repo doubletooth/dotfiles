@@ -185,6 +185,10 @@ brew install curl jq yq
 brew upgrade curl jq yq
 add_to_file /etc/paths.d/900-akshay "/opt/homebrew/opt/curl/bin" "brew curl install" "y"
 
+
+print_green "Install cloud tools"
+brew install --cask google-cloud-sdk
+
 # Other language environments to setup
 # nvm/node
 # TeX
