@@ -137,6 +137,7 @@ brew install --cask sublime-text sublime-merge
 brew install --cask jetbrains-toolbox
 
 add_to_file ~/.vimrc "$(curl -sSL https://raw.githubusercontent.com/doubletooth/dotfiles/main/tools/vim/vimrc)" "vim syntax updates"
+add_to_file ~/.gitconfig "$(curl -sSL https://raw.githubusercontent.com/doubletooth/dotfiles/main/tools/git/gitconfig)" "git config update"
 
 print_green "Installing communication tools"
 brew install --cask whatsapp
@@ -145,35 +146,13 @@ brew install --cask slack
 print_green "Installing entertainment tools"
 brew install --cask spotify
 
-print_green "Installing python tooling"
-PYTHON_VERSION="3.11.1"
-PYTHON2_VERSION="2.7.18"
+print_green "Installing uv"
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# shellcheck disable=SC2016
-PYENV_ZSHRC_ENTRY='
-export PYENV_ROOT="$HOME/.pyenv"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-'
-add_to_file ~/.zshrc "${PYENV_ZSHRC_ENTRY}" "pyenv shell setup"
-
-brew install openssl readline sqlite3 xz zlib pyenv pyenv-virtualenv
-brew upgrade pyenv pyenv-virtualenv
-
-eval "$(pyenv init --path)"
-pyenv install -s "${PYTHON_VERSION}"
-pyenv install -s "${PYTHON2_VERSION}"
-pyenv global "${PYTHON_VERSION}" "${PYTHON2_VERSION}"
-
-print_green "Installing poetry"
-curl -sSL https://install.python-poetry.org/ | python3 -
-
-POETRY_PATH_UPDATE="${HOME}/.local/bin"
-add_to_file "/etc/paths.d/900-akshay" "${POETRY_PATH_UPDATE}" "poetry bin path update" "true"
+LOCAL_BIN_PATH_UPDATE="${HOME}/.local/bin"
+add_to_file "/etc/paths.d/900-akshay" "${LOCAL_BIN_PATH_UPDATE}" "local tools to path" "y"
 
 print_green "Installing golang tools"
-brew install go@1.17
 brew install go
 
 print_green "Installing rustup"
@@ -188,6 +167,7 @@ add_to_file /etc/paths.d/900-akshay "/opt/homebrew/opt/curl/bin" "brew curl inst
 
 print_green "Install cloud tools"
 brew install --cask google-cloud-sdk
+brew install awscli
 
 # Other language environments to setup
 # nvm/node

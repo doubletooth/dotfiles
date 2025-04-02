@@ -1,0 +1,46 @@
+[user]
+        name = Akshay Dongaonkar
+        email = akshaydon93@gmail.com
+        signingkey = CCBCA014CF084B07
+[column]
+        ui = auto
+[branch]
+        sort = -committerdate
+[tag]
+        sort = version:refname
+        gpgsign = true
+[init]
+        defaultBranch = main
+[diff]
+        algorithm = histogram
+        colorMoved = plain
+        mnemonicPrefix = true
+        renames = true
+[pull]
+        rebase = true
+[push]
+        default = current
+        autoSetupRemote = true
+        followTags = true
+[fetch]
+        prune = true
+        pruneTags = true
+        all = true
+[help]
+        autocorrect = prompt
+[commit]
+        verbose = true
+        gpgsign = true
+[rerere]
+        enabled = true
+        autoupdate = true
+[core]
+        repositoryformatversion = 0
+        precomposeunicode = true
+        logallrefupdates = true
+        ignorecase = true
+        excludesfile = ~/.gitignore
+[rebase]
+        autoSquash = true
+        autoStash = true
+        updateRefs = true
