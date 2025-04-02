@@ -99,7 +99,7 @@ else
 fi
 
 print_green "Installing shell"
-brew install --cask iterm2
+brew install --cask ghostty
 
 # Install oh my zsh to machine
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"
@@ -163,7 +163,6 @@ print_green "Installing jq and yq + other dev tools"
 brew install curl jq yq
 brew upgrade curl jq yq
 add_to_file /etc/paths.d/900-akshay "/opt/homebrew/opt/curl/bin" "brew curl install" "y"
-
 
 print_green "Install cloud tools"
 brew install --cask google-cloud-sdk
