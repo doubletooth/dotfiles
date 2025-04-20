@@ -169,9 +169,11 @@ print_green "Install cloud tools"
 brew install --cask google-cloud-sdk
 brew install awscli
 
+print_green "Installing TeX tools"
+brew install --cask mactex
+
 # Other language environments to setup
 # nvm/node
-# TeX
 
 # shellcheck disable=SC2016
 print_green 'Installed what we could, please restart your shell (exec $SHELL)'
