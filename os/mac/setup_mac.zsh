@@ -146,8 +146,9 @@ brew install --cask slack
 print_green "Installing entertainment tools"
 brew install --cask spotify
 
-print_green "Installing uv"
-curl -LsSf https://astral.sh/uv/install.sh | sh
+print_green "Installing python tooling + management"
+curl -sSLf https://astral.sh/uv/install.sh | sh
+brew install poetry
 
 LOCAL_BIN_PATH_UPDATE="${HOME}/.local/bin"
 add_to_file "/etc/paths.d/900-akshay" "${LOCAL_BIN_PATH_UPDATE}" "local tools to path" "y"
