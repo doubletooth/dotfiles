@@ -16,11 +16,12 @@ chmod +x setup_mac.zsh && ./setup_mac.zsh && rm -f setup_mac.zsh
 ## Upcoming OS Support
 
 - Ubuntu
-- CentOS 7
+- Windows
 
 ## Current Tool Support
 
 - vim
+- git
 
 ## Upcoming Tool Support
 

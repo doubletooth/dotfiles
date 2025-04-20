@@ -1,11 +1,6 @@
-if [ -x /usr/libexec/path_helper ]; then
-    eval $(/usr/libexec/path_helper -s)
-fi
+# deduplicate path variables if they end up happening
+typeset -U PATH
 
 # akshay git aliases
 alias akdsm="git branch --merged | grep -v \"*\" | grep akd"
 alias akdcm="git branch --merged | grep -v \"*\" | grep akd | xargs git branch -d"
-
-# gcloud completions
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
