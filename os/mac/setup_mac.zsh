@@ -129,7 +129,7 @@ print_green "Installing VPN"
 brew install --cask private-internet-access
 
 print_green "Installing virtualization tools"
-brew install docker --cask
+brew install --cask docker-desktop
 brew install minikube
 
 print_green "Installing editors"
@@ -166,14 +166,15 @@ brew upgrade curl jq yq
 add_to_file /etc/paths.d/900-akshay "/opt/homebrew/opt/curl/bin" "brew curl install" "y"
 
 print_green "Install cloud tools"
-brew install --cask google-cloud-sdk
+brew install --cask gcloud-cli
 brew install awscli
+
+print_green "Installing Javascript tooling"
+brew install node@22
+brew install yarn
 
 print_green "Installing TeX tools"
 brew install --cask mactex
-
-# Other language environments to setup
-# nvm/node
 
 # shellcheck disable=SC2016
 print_green 'Installed what we could, please restart your shell (exec $SHELL)'
