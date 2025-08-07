@@ -1,3 +1,10 @@
+if [[ $(sysctl -a machdep.cpu.brand_string | awk '{ print $2 }') = "Apple" ]]; then
+  export PATH="/opt/homebrew/bin:/opt/homebrew/opt/curl/bin:$PATH"
+fi
+
+# This should be in the path by this point - installed via brew
+eval "$(starship init zsh)"
+
 # deduplicate path variables if they end up happening
 typeset -U PATH
 
