@@ -168,7 +168,7 @@ brew install --cask gcloud-cli
 brew install awscli
 
 print_green "Installing Javascript tooling"
-brew install node@22
+brew install node
 brew install yarn
 
 print_green "Installing TeX tools"
