@@ -11,3 +11,5 @@ typeset -U PATH
 # akshay git aliases
 alias akdsm="git branch --merged | grep -v \"*\" | grep akd"
 alias akdcm="git branch --merged | grep -v \"*\" | grep akd | xargs git branch -d"
+
+export LESS="-FRX"

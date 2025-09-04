@@ -171,6 +171,11 @@ print_green "Installing Javascript tooling"
 brew install node
 brew install yarn
 
+print_green "Installing AI tools"
+brew install --cask claude-code
+# should be in PATH from earlier in the script
+claude config set -g autoUpdates false
+
 print_green "Installing TeX tools"
 brew install --cask mactex
 
